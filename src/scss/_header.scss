@@ -1,0 +1,38 @@
+.header {
+  background-color: var(--color-elements);
+  box-shadow: 0 4px 12px -10px var(--shadow);
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+
+    h1 {
+      font-weight: var(--fw-bold);
+
+      a {
+        color: var(--color-text);
+        text-decoration: none;
+      }
+    }
+
+    button {
+      border: unset;
+      background: unset;
+      font-size: inherit;
+      font-weight: var(--fw-normal);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      color: var(--color-text);
+
+      .color-toggler {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
