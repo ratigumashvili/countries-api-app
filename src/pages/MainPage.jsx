@@ -2,6 +2,7 @@ import LoadingSpinner from "../components/ui/LoadingSpinner";
 import SearchFilter from "../components/SearchFilter";
 
 import { useEffect, useState } from "react";
+import Card from "../components/ui/Card";
 
 const MainPage = ({ initialData, loading }) => {
   const [filteredData, setFilteredData] = useState(initialData);
@@ -10,6 +11,8 @@ const MainPage = ({ initialData, loading }) => {
     setFilteredData(initialData);
   }, [initialData]);
 
+  console.log(initialData);
+
   return (
     <>
       <section className="container main-page">
@@ -17,16 +20,16 @@ const MainPage = ({ initialData, loading }) => {
           initialData={initialData}
           setFilteredData={setFilteredData}
         />
-        {loading ? (
-          <LoadingSpinner />
-        ) : (
-          <ol>
-            {filteredData?.map(({ name, numericCode }) => (
-              <li key={numericCode}>{name}</li>
-            ))}
-          </ol>
-        )}
-        {filteredData.length === 0 && <h1>No country Found</h1>}
+
+        {loading && <LoadingSpinner />}
+
+        {!loading && filteredData.length === 0 && <h1>Nothing found</h1>}
+
+        <div className="cards-wrapper">
+          {filteredData?.map((country) => (
+            <Card key={country.numericCode} {...country} />
+          ))}
+        </div>
       </section>
     </>
   );

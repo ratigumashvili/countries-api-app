@@ -1,3 +1,49 @@
 .main-page {
-  padding: 0 2rem 1rem 2rem;
+  padding: 0 2rem 4rem 2rem;
+
+  .cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      background: var(--color-elements);
+      box-shadow: 0 4px 12px -10px var(--shadow);
+
+      img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+      }
+
+      .card-body {
+        margin-top: auto;
+        padding: 1rem;
+        padding-bottom: 1.5rem;
+
+        h2 {
+          font-size: var(--fz-big);
+          margin-bottom: 1rem;
+        }
+
+        h3 {
+          font-size: var(--fz-small);
+          font-weight: var(--fw-light);
+          margin-bottom: 0.5rem;
+
+          span {
+            font-weight: var(--fw-normal);
+          }
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
 }

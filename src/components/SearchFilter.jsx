@@ -14,8 +14,7 @@ const SearchFilter = ({ initialData, setFilteredData }) => {
   const [regionValue, setRegionValue] = useState("");
 
   useEffect(() => {
-    handleSearch(regionValue);
-    handleSearch(searchValue);
+    handleSearch(regionValue, searchValue);
     // eslint-disable-next-line
   }, [searchValue, regionValue]);
 
