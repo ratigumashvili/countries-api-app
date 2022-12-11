@@ -6,6 +6,10 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
 
+    @media (max-width: 400px) {
+      grid-template-columns: 1fr;
+    }
+
     .card {
       display: flex;
       flex-direction: column;
@@ -18,6 +22,10 @@
         width: 100%;
         height: 220px;
         object-fit: cover;
+
+        @media (max-width: 696px) {
+          height: auto;
+        }
       }
 
       .card-body {

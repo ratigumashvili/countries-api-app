@@ -11,8 +11,6 @@ const MainPage = ({ initialData, loading }) => {
     setFilteredData(initialData);
   }, [initialData]);
 
-  console.log(initialData);
-
   return (
     <>
       <section className="container main-page">

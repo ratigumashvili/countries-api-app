@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const Card = ({ flag, name, population, region, capital }) => {
   const navigate = useNavigate();
   return (
-    <div className="card" onClick={() => navigate(`countries/${name}`)}>
+    <div className="card" onClick={() => navigate(`/countries/${name}`)}>
       <div className="card-header">
         <img src={flag} alt={name} />
       </div>

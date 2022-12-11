@@ -1,0 +1,117 @@
+.country-page {
+  padding: 0 2rem;
+
+  .country-description {
+    display: grid;
+    width: 100%;
+    grid-template-areas:
+      "head head"
+      "flag  meta";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr 1fr;
+
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .country-description {
+    .description-header {
+      grid-area: head;
+      padding: 3rem 0;
+
+      button {
+        border: unset;
+        background: unset;
+        padding: 0.9rem 1.3rem 0.9rem 4rem;
+        position: relative;
+        font-size: var(--fz-big);
+        color: var(--color-text);
+        background-color: var(--color-elements);
+        box-shadow: 0 4px 12px -10px var(--shadow);
+        cursor: pointer;
+
+        .icon {
+          position: absolute;
+          left: 0.5rem;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .description-flag {
+      grid-area: flag;
+      display: flex;
+      align-items: center;
+      margin-right: 4rem;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .description-meta {
+      grid-area: meta;
+
+      display: grid;
+      width: 100%;
+      grid-template-areas:
+        "title title"
+        "meta-left meta-right"
+        "meta-bottom meta-bottom";
+      grid-template-rows: auto 1fr auto;
+      grid-template-columns: 1fr 1fr;
+
+      .meta-title {
+        grid-area: title;
+        padding: 2rem 0;
+        font-size: 1.8rem;
+      }
+      .meta-left {
+        grid-area: meta-left;
+      }
+      .meta-right {
+        grid-area: meta-right;
+      }
+      .meta-left,
+      .meta-right {
+        ul {
+          list-style-type: none;
+
+          li {
+            margin-bottom: 0.6rem;
+            .meta-list-title {
+              font-weight: var(--fw-normal);
+            }
+            .meta-list__list:not(:last-of-type) {
+              &::after {
+                content: ", ";
+              }
+            }
+          }
+        }
+      }
+      .meta-bottom {
+        grid-area: meta-bottom;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem;
+
+        .meta-bottom-title {
+          font-weight: var(--fw-normal);
+        }
+
+        p {
+          padding: 0.5rem 1rem;
+          background-color: var(--color-elements);
+          box-shadow: 0 4px 12px -10px var(--shadow);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
